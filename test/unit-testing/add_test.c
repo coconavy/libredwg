@@ -757,8 +757,7 @@ test_add (const Dwg_Object_Type type, const char *restrict file, const int as_dx
   if (error >= DWG_ERR_CRITICAL)
     {
       if (as_dxf &&
-          (type == DWG_TYPE_OLE2FRAME
-           || type == DWG_TYPE_SHAPE)) // code 2: SHAPE -> STYLE.name
+          type == DWG_TYPE_OLE2FRAME) // ??
         {
           todo ("read %s from %s", name, dwgfile);
           return 0;
