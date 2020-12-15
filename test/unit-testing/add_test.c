@@ -705,6 +705,9 @@ test_add (const Dwg_Object_Type type, const char *restrict file, const int as_dx
         //dwg_add_CHAMFER (hdr, &pt, NULL, 1, 10.0, 10.0, 1, edges, 152);
       }
       break;
+    case DWG_TYPE_WIPEOUTVARIABLES:
+      dwg_add_WIPEOUTVARIABLES (dwg);
+      break;
     case DWG_TYPE_ACSH_FILLET_CLASS:
     case TEMP_ELLIPTICAL_CONE:
     case TEMP_ELLIPTICAL_CYLINDER:
@@ -882,6 +885,8 @@ test_add (const Dwg_Object_Type type, const char *restrict file, const int as_dx
       //TEST_OBJECT (ACSH_PYRAMID_CLASS);
       //TEST_OBJECT (ACSH_CHAMFER_CLASS);
       //TEST_OBJECT (ACSH_FILLET_CLASS);
+      TEST_OBJECT (WIPEOUTVARIABLES); // just for testing, not for real yet
+
     case TEMP_ELLIPTICAL_CONE:
     case TEMP_ELLIPTICAL_CYLINDER:
     case TEMP_EXTRUDED_SOLID:
@@ -891,7 +896,6 @@ test_add (const Dwg_Object_Type type, const char *restrict file, const int as_dx
     //TEST_OBJECT (TABLECONTENT);
     //TEST_OBJECT (TABLEGEOMETRY);
     //TEST_OBJECT (TABLESTYLE);
-
     default:
       fail ("No test yet for type %s", name);
     }
@@ -1025,6 +1029,9 @@ main (int argc, char *argv[])
 #ifdef HAVE_DWG_ADD_TABLEGEOMETRY
       error += test_add (DWG_TYPE_TABLEGEOMETRY, "add_tablegeometry_2000", dxf);
 #endif
+
+      // just for testing yet
+      error += test_add (DWG_TYPE_WIPEOUTVARIABLES, "add_wipeoutvars_2000", dxf);
     }
 
   return error;

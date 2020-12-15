@@ -27368,7 +27368,20 @@ dwg_add_SPATIAL_INDEX (Dwg_Data *restrict dwg /* ... */)
 // VISIBILITYPARAMETERENTITY
 // VISUALSTYLE
 // WIPEOUT
-// WIPEOUTVARIABLES
+
+// just for testing dwg_type_dxfname()
+EXPORT Dwg_Object_WIPEOUTVARIABLES*
+dwg_add_WIPEOUTVARIABLES (Dwg_Data *dwg /* ... */)
+{
+  {
+    REQUIRE_CLASS ("WIPEOUTVARIABLES");
+  }
+  {
+    API_ADD_OBJECT (WIPEOUTVARIABLES);
+    return _obj;
+  }
+}
+
 // XREFPANELOBJECT
 // XYPARAMETERENTITY
 
