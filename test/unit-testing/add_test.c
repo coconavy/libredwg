@@ -758,7 +758,6 @@ test_add (const Dwg_Object_Type type, const char *restrict file, const int as_dx
   if (error >= DWG_ERR_CRITICAL)
     {
       if (as_dxf && (type == DWG_TYPE_POLYLINE_2D
-                     || type == DWG_TYPE_POLYLINE_MESH
                      || type == DWG_TYPE_OLE2FRAME
                      || type == DWG_TYPE_SHAPE))
         {
